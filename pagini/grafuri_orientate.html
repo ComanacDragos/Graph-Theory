@@ -21,7 +21,7 @@
         <li><a href="introducere.html#c" class="navlink"><strong>Grafuri în viața reala</strong></a></li>
     </ul>
     </li>
-    <li><a href="#" class="navlink"><strong>Grafuri neorientate</strong></a>
+    <li><a href="grafuri_neorientate.html" class="navlink"><strong>Grafuri neorientate</strong></a>
     <ul>
         <li><a href="grafuri_neorientate.html#a" class="navlink"><strong>Noţiunea de graf neorientat</strong></a></li>
         <li><a href="grafuri_neorientate.html#b" class="navlink"><strong>Reprezentarea grafurilor neorientate</strong></a></li>
@@ -34,6 +34,7 @@
     <li><a href="#" class="navlink"><strong>Grafuri orientate</strong></a>
     <ul>
         <li><a href="#a" class="navlink"><strong>Noţiunea de graf orientat</strong></a></li>
+        <li><a href="#b" class="navlink"><strong>Metode de reprezentare a grafurilor orientate</strong></a></li>
     </ul>
     </li>
     <li><a href="#" class="navlink"><strong>Arbori</strong></a></li>
@@ -112,6 +113,44 @@
     <p>
         <span>Exemplu</span>: Pentru graful din figura alăturată <span>D1=(1,2,3,4,5,6,4,1)</span>, <span>D2=(1,2,3,4,1)</span> şi <span>D3=(4,5,6,4)</span> sunt circuite dar numai D2 şi D3 sunt <span>elementare</span>.            
     </p>
+    <p>
+     Noţiunile de <span>subgraf</span> şi <span>graf parţial</span> se definesc ca şi în cazul grafurilor neorientate şi anume:
+     <br><span>Definiţie</span>:  Se numeşte <span>graf parţial</span> al unui graf orientat G=(X,U) un graf orientat G1=(X,V) cu <span>V&sube;U</span> (deci este chiar G sau se obţine din G prin suprimarea unor arce).
+     <br>Se numeşte <span>subgraf</span> al unui graf orientat G=(X,U) un graf H=(Y,V), unde <span>Y&sube;X</span> iar arcele lui V sunt toate arcele din U care au <span>ambele extremităţi</span> în mulţimea Y (deci este chiar G sau se obţine din G prin suprimarea anumitor vârfuri şi a arcelor incidente cu acestea). Se spune că H este indus sau generat de mulţimea de vârfuri Y. 
+    </p>
+    <p>
+    <span>Exemplu</span>: 
+    Pentru graful din figura de mai sus, G1=(X,V) cu <span>V={u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>,u<sub>7</sub>,u<sub>6</sub>}</span> este un graf parţial, iar H=(Y,V) cu Y={1,2,3,4} şi <span>V={u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>,u<sub>4</sub>}</span> este subgraful lui G indus de mulţimea de vârfuri Y.
+    </p>
+    <div style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+        <div class="graf1">
+        <img src="../media/graf-partial1.png" style="height: 250px; width: 100%;">
+        <p style="text-align:center;">
+            <span>Subgraful H=(Y,V)</span>
+        </p>
+    </div>
+    <div class="graf1" >
+        <img src="../media/graf-partial2.png" style="height: 250px;width: 100%;">
+        <p style="text-align:center;">
+            <span>Graful parţial G1=(X,V)</span>
+        </p>
+    </div>
+
+    </div>
+ 
+    <p style="clear:both; padding-top:50px; ">
+        <span>Definiţie</span>:  Un graf orientat este complet dacă oricare două vârfuri distincte sunt adiacente.
+    </p>
+    <p>
+	Spre deosebire de grafurile neorientate la care există un graf complet unic cu n vârfuri, pentru un n dat, putem construi mai multe grafuri orientate complete având numărul de vârfuri <span>n</span>. Acest lucru decurge din faptul că două vârfuri x,y sunt adiacente în oricare din următoarele situaţii: există arcul (x,y), există arcul (y,x), există ambele arce (x,y), (y,x). Cum sunt <span>C<sup style="font-size:15px;">2</sup><sub style="font-size: 15px;position: relative; left: -7px;">n</sub></span> posibilităţi de a alege două vârfuri distincte iar pentru fiecare dintre acestea există trei situaţii ca ele să fie adiacente, rezultă că pentru un n dat sunt <span>3<sup>C<sup style="font-size:15px;">2</sup><sub style="font-size: 15px;position: relative; left: -7px;">n</sub></sup></span> grafuri <span>complete cu n vârfuri</span>. 
+   </p>
+</div>
+
+<div style="clear:both">
+
+<span class="anchor" id="b"></span>
+<h2>Metode de reprezentare a grafurilor orientate</h2>
+
 </div>
 
 </body>
