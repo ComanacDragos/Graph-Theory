@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/grafuri_neorientate.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/ico" href="../media/logo.jpg" /> 
+    <title>Teoria Grafurilor</title>
+</head>
+<body >
+
+<header>
+
+<a class="imglink" href="../index.html"><img class="header" src="../media/logo1.jpg"></a>
+
+<h1>Teoria Grafurilor</h1>
+
+<ul>
+    <li><a href="introducere.html" class="navlink"><strong>Introducere</strong></a>
+    <ul>
+        <li><a href="introducere.html#a" class="navlink"><strong>Scurt istoric al teoriei grafurilor</strong></a></li>
+        <li><a href="introducere.html#b" class="navlink"><strong>Problema podurilor din Königsberg</strong></a></li>
+        <li><a href="introducere.html#c" class="navlink"><strong>Grafuri în viața reala</strong></a></li>
+    </ul>
+    </li>
+    <li><a href="#" class="navlink"><strong>Grafuri neorientate</strong></a>
+    <ul>
+        <li><a href="#a" class="navlink"><strong>Noţiunea de graf neorientat</strong></a></li>
+        <li><a href="#b" class="navlink"><strong>Reprezentarea grafurilor neorientate</strong></a></li>
+        <li><a href="#c" class="navlink"><strong>Noţiunile de graf parţial şi subgraf</strong></a></li>
+        <li><a href="#d" class="navlink"><strong>Graf complet şi graf bipartit</strong></a></li>
+        <li><a href="#e" class="navlink"><strong>Noţiunile de lanţ şi ciclu</strong></a></li>
+        <li><a href="#f" class="navlink"><strong>Grafuri hamiltoniene şi euleriene</strong></a></li>
+    </ul>
+    </li>
+    <li><a href="grafuri_orientate.html" class="navlink"><strong>Grafuri orientate</strong></a></li>
+    <li><a href="#" class="navlink"><strong>Arbori</strong></a></li>
+</ul>
+
+</header>
+
+<div>
+        <span class="anchor" id="a"></span>
+    <h2>Noţiunea de graf neorientat</h2>
+    <div class="col">
+    <p>
+    <span>Definiţie</span> : Se numeşte <span>graf neorientat</span> o pereche ordonată de mulţimi (X,U) , unde:
+<br>•	X este o mulţime finită şi nevidă de elemente numite <span>vârfuri</span> sau <span>noduri</span>;
+<br>•	U este o mulţime de perechi neordonate de câte două elemente din X, numite <span>muchii</span> sau <span>arce</span>;
+    </p>
+    <p>
+    Un graf neorientat poate fi reprezentat sub forma unei figuri geometrice alcătuită din puncte (vârfuri,noduri) şi linii drepte sau curbe care unesc aceste puncte (muchii, arce). Respectând o anumită tradiţie pe care o regăsim în literatura de specialitate, vom folosi:
+<br>•	pentru grafuri neorientate termenii de vârf şi muchie;
+<br>•	pentru grafurile orientate termenii de nod şi arc;
+<br>Dacă o muchie trece prin nodurile x şi y, atunci ea se notează [x,y] sau (x,y).         
+    </p>
+    <p style="white-space:pre-line;">Pe caz general, într-un graf neorientat G=(X,U), notăm:
+            •	m - numărul muchiilor;
+            •	n - numărul vârfurilor;
+            •	X={x<sub>1</sub>,x<sub>2</sub>,…….,x<sub>n</sub>} - mulţimea vârfurilor;
+            •	U={u<sub>1</sub>,u<sub>2</sub>,……u<sub>m</sub>} - mulţimea muchiilor;
+            •	muchia uk este o pereche neordonată (a,b) alcătuită din două elemente din X;
+            Pentru o muchie u<sub>k</sub>=(a,b), vom spune că:
+            •	vârfurile a şi b sunt <span>adiacente</span> şi se numesc <span>extremităţile</span> muchiei u<sub>k</sub>;
+            •	muchia u<sub>k</sub> şi vârful a, respectiv vârful b , sunt <span>incidente</span> în graf;
+            •	muchia (a,b) este totuna cu muchia (b,a) (<span>nu există o orientare a muchiei</span>);
+            </p>
+
+</div>
+
+<div class="col">
+    <p style="white-space:pre-line; float:left;"><span>Exemplu</span>: Pentru graful G=(X,U) din figura alăturată avem:
+    •	X={1,2,3,4,5,6,7} - mulţimea vârfurilor;
+    •	U={u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>,u<subb>4</sub>,u<sub>5</sub>} - mulţimea muchiilor;
+    •	muchiile sunt: u<sub>1</sub>=(1,2), u<sub>2</sub>=(2,3), u<sub>3</sub>=(3,4), u<sub>4</sub>=(2,4), u<sub>5</sub>=(5,6);
+    </p>
+<img src="../media/graf2.png" class="graf">
+
+<p>
+    <span>Definiţie</span>: Gradul unui vârf x, notat <span>d(x)</span>, reprezintă numărul muchiilor care trec prin nodul x (incidente cu nodul x).     
+</p>
+
+<p style="white-space:pre-line"><span>Exemplu</span>:  În graful din figura de mai sus avem : d(1)=d(5)=d(6)=1, d(2)=3, d(3)=d(4)=2, d(7)=0.
+
+•	Un vârf care are gradul 0, se numeşte <span>vârf izolat</span> (de exemplu, vârful 7);
+•	Un vârf care are gradul 1, se numeşte <span>vârf terminal</span> (de exemplu, vârfurile 5 şi 6);
+</p>
+
+
+</div>
+
+
+<p style="white-space:pre-line; clear: both;"><span>Teoremă</span>: Într-un graf G=(X,U) cu <span>n vârfuri</span> şi <span>m muchii</span>, suma gradelor tuturor vârfurilor este egală cu <span>2*numărul muchiilor</span>: <span>d(1)+d(2)+...+d(n)=2*m</span>.
+            <br>   <span>Consecinţă</span>:   În orice graf neorientat G=(X,U) există un număr par de vârfuri cu grad impar.
+    </p>
+
+    <p>
+        Demonstraţia este evidentă. Fiecare muchie de forma [xi,xj] contribuie cu o unitate la gradul vârfului i şi cu o unitate la gradul vârfului j. Aşadar <span>fiecare muchie adaugă două unităţi la suma gradelor</span>. Fiind m muchii, rezultă că suma gradelor este <span>2*m</span>. 
+    </p>
+    <p>
+        <span>Teoremă</span>: Daca graful neorientat G are <span>n</span> noduri atunci numarul total de <span>grafuri neorientate</span> care se pot forma cu aceste noduri este <span>2<sup>C<sup style="font-size:15px;">2</sup><sub style="font-size: 15px;position: relative; left: -7px;">n</sub></sup></span>.
+    </p>
+    <p>
+        <span>Teoremă</span>: Un <span>graf complet</span> este un graf neorientat simplu în care fiecare pereche de noduri distincte este conectată printr-o muchie.
+        Graful complet cu <span>n</span> noduri este notat cu <span>K<sub>n</sub></span>. <span>K<sub>n</sub></span> are <span>n(n − 1)/2</span> muchii.
+    </p>
+</div>
+
+<div>
+        <span class="anchor" id="b"></span>
+    <h2>Reprezentarea grafurilor neorientate</h2>
+    <p>
+            Considerăm un graf neorientat <span>G=(X,U)</span> cu <span>m</span> muchii şi <span>n</span> vârfuri numerotate <span>1,2,3,.....,n</span>.
+             Cele mai cunoscute forme de reprezentare ale unui astfel de graf sunt: matricea de adiacenţă, listele vecinilor, vectorul muchiilor, matricea de incidenţă şi matricea costurilor.
+    </p>
+    <h3>Matricea de adiacenţă</h3>
+    <div class="col">
+   
+        <p>Este o matrice <span>A</span> pătratică cu n linii şi n coloane, în care elementele <span>a[i][j]</span> se definesc astfel:</p>
+   
+        <span>        
+         a[i][j]=1,   dacă există muchia [i,j] cu i &ne; j; 0, în caz contrar
+        </span>
+ <p style="white-space:pre-wrap;"> Pentru graful G=(X,U) din figura alăturată, matricea de adiacenţă este:    
+    <table>
+        <tr style="border-bottom:5px solid;">
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+        </tr>
+        <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+        </tr>
+        <tr>
+                <td>2</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+        </tr>
+        <tr>
+                <td>3</td>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+        </tr>
+        <tr>
+                <td>4</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+        </tr>
+        
+    </table>
+
+        </p>
+    </div>
+
+    <div class="col">
+        <img src="../media/graf neorientat .png" class="graf">
+       
+       <p>Elementul a[2][3] (de pe linia 2 şi coloana 3) va fi 1, întrucât există în graf muchia (2,3). Dar acestă muchie este identică cu muchia (3,2), deci şi a[3][2] este 1.
+            Pe caz general, a[i][j]=a[j][i] oricare ar fi i,j &isin; {1,2,...,n} , cu i &ne; j, adică, pentru orice <span>graf neorientat</span>, matricea de adiacenţă a este <span>simetrică faţă de diagonala principală</span>.
+        </p>
+
+     </div>
+       
+    <p>
+        Dacă <span>A este matricea de adiacență</span> a unui graf orientat sau neorientat G, atunci matricea <span>A<sup>n</sup></span> (adică produsul matriceal⁠ a n copii ale lui A) are o interpretare interesantă:
+         elementul (i, j) dă <span>numărul de drumuri</span> (orientate sau neorientate) de <span>lungime n</span> din nodul i la nodul j. Dacă n este <span>cel mai mic număr întreg nenegativ</span>, astfel încât pentru orice pereche i, j, elementul (i, j) din A<sup>n</sup> este <span>pozitiv</span>, atunci <span>n este distanța între nodul i și nodul j</span>. Acest lucru implică, de exemplu, că numărul de triunghiuri într-un graf neorientat G este exact urma lui A<sup>3</sup> împărțită la 6. Matricea de adiacență poate fi folosită și pentru a determina dacă graful este sau nu este <span>conex</span> ( pentru oricare două vârfuri x şi y diferite ale sale, există un lanţ
+         care le leagă)⁠.
+    </p>
+
+    <h3>Listele vecinilor</h3>
+
+    <p>Pentru fiecare nod i &isin;{1,2,……,n} formăm lista vecinilor lui i. Aceasta cuprinde toate nodurile care sunt <span>extremităţi</span> ale muchiilor ce trec prin nodul <span>i</span>. Pentru graful G=(X,U) din figura de mai sus, lista vecinilor este următoarea:</p>
+
+    <table>
+        <tr style="border-bottom:5px solid;">    
+        <td>Nodul</td>
+        <td colspan="3">Lista vecinilor</td>  
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>4</td>
+            <td>-</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>2</td>
+            <td>3</td>
+            <td>-</td>
+        </tr>
+        
+    
+    </table>
+
+    <p>Observăm că fiecare <span>linie i</span> din listele vecinilor conţine <span>indicii coloanelor</span> pe care se găsesc valori de 1 în linia i a <span>matricei de adiacenţă</span>. Acestă metodă de reprezentare se implementează elegant utilizând alocarea dinamică a memoriei prin intermediul listelor înlănţuite.</p>
+
+    <h3>Reprezentarea grafului ca vector de muchii</h3>
+
+    <p>Fiecare muchie a grafului poate fi privită ca o înregistrare cu două componente: cele două vârfuri care constituie <span>extremităţile muchiei</span>. Notând aceste extremităţi cu <span>nod1</span> şi <span>nod2</span>, putem defini tipul de date <span>TMUCHIE</span> astfel:</p>
+
+    <p style="text-align: center;"><span>struct TMUCHIE { int nod1, nod2; };
+          </span>
+    </p>
+    <p>
+            Graful în ansamblul său, este o mulţime de muchii, adică o mulţime de elemente de tipul <span>TMUCHIE</span>. În consecinţă, definim graful ca un <span>“vector de muchii”</span>, adică un vector cu elemente de tipul <span>TMUCHIE</span>:
+            <span>struct TMUCHIE v[25];</span>
+    </p>
+    <p>
+            Numărul real de elemente este numărul de muchii <span>m</span>. Astfel, elementele efectiv folosite ale vectorului vor fi v[1], v[2],….,v[m]. Fiecare element <span>v[i]</span> este de tipul <span>TMUCHIE</span> şi reprezintă o muchie a grafului, având două componente: <span>v[i].nod1</span> şi <span>v[i].nod2</span> care sunt vârfurile extremităţi ale muchiei.
+    </p>
+
+    <h3>Matricea de incidenţă </h3>
+
+    <div class="col">
+
+        <p>Pentru graful <span>G=(X,U)</span> cu <span>n vârfuri şi m muchii</span>, matricea de incidenţă a are <span>n linii şi m coloane</span> şi se defineşte astfel:</p>
+        <p style="text-align:center"> 
+                <span>a[i][j]</span>=1, dacă vârful <span>x<sub>i</sub></span> este incident cu muchia <span>m<sub>j</sub></span>        
+                    <br>0, în caz contrar
+        </p>
+        <p>
+                <span>Exemplu</span>:  Fie graful <span>G=(X,U)</span> din figura alăturată cu:
+                X={1,2,3,4,5,6} 
+                U={[1,2], [1,3], [1,4], [1,5], [2,4], [3,5], [3,6], [4,5], [5,6]}
+                Pentru acest graf, asociind fiecăruia dintre vârfuri câte
+                o <span>linie</span> a matricei şi fiecărei muchii câte o <span>coloană</span>, se
+                obţine <span>matricea de incidenţă</span>:
+                
+        </p>
+    </div>
+
+    <div class="col">
+
+        <img class="graf" src="../media/graf-matrice-incidenta.png">
+
+    </div>
+
+    <table style="clear:both;">
+        <tr>
+        <td></td>
+        <td>u<sub>1</sub></td>
+        <td>u<sub>2</sub></td>
+        <td>u<sub>3</sub></td>
+        <td>u<sub>4</sub></td>
+        <td>u<sub>5</sub></td>
+        <td>u<sub>6</sub></td>
+        <td>u<sub>7</sub></td>
+        <td>u<sub>8</sub></td>
+        <td>u<sub>9</sub></td>
+        </tr>
+        <tr>
+        <td>x<sub>1</sub></td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        </tr>
+        <tr>
+        <td>x<sub>2</sub></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        </tr>
+        <tr>
+        <td>x<sub>3</sub></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        </tr>
+        <tr>
+        <td>x<sub>4</sub></td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        </tr>
+        <tr>
+        <td>x<sub>5</sub></td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        </tr>
+        <tr>
+        <td>x<sub>6</sub></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        </tr>
+        </table>
+
+        <h3>Matricea costurilor</h3>
+    <p>Datorită specificului unor probleme practice, acest mod de memorare a grafului poate căpăta două aspecte, după cum trebuie determinat <span>minimul</span> sau <span>maximul</span> unei anumite mărimi asociate muchiilor (cost, durată, timp, distanţă etc.).
+      <br> A) Matricea costurilor, forma 1: este folosită în cazul în care se doreşte determinarea unui drum de <span>lungime minimă</span> între două vârfuri oarecare şi se defineşte astfel:
+    </p>
+    
+    <p style="white-space:pre-wrap; margin: auto;width: 50%;"> <span>
+       a[i][j]= c,  dacă există o muchie de cost c>0 între nodurile i şi j, i&ne;j
+                   0,  dacă i=j
+                   &infin;,  dacă nu există muchie între vârfurile i şi j, i&ne;j</span>
+    </p>
+
+    <p>
+            Este evidentă necesitatea ataşării unei valori cât mai mari unei muchii ce de fapt nu există, deoarece, căutându-se un drum de <span>lungime minimă</span>, în acest mod se evită selectarea, la un moment dat, a respectivei muchii. În practică, în scrierea unui program se alege cea mai mare valoare ce se poate reprezenta în calculator.
+    </p>
+    <p>
+            B) Matricea costurilor, forma 2: este folosită în cazul când se doreşte determinarea unui drum de <span>lungime maximă</span> între două noduri şi se defineşte astfel:
+    </p>
+    <p style="white-space:pre-wrap; margin: auto;width: 50%;"> <span>
+            a[i][j]= c,  dacă există o muchie de cost c>0 între nodurile i şi j, i&ne;j
+                        0,  dacă i=j
+                        -&infin;,  dacă nu există muchie între vârfurile i şi j, i&ne;j</span>
+    </p>
+    <p>
+            De data aceasta, din considerente similare, se alege cea mai mică valoare ce se poate reprezenta în calculator.
+    </p>
+</div>
+
+<div>
+        <span class="anchor" id="c"></span>
+<h2>Noţiunile de graf parţial şi subgraf</h2>
+
+<p>
+        <span>Definiţie</span>:   Fie graful <span>G=(X,U)</span>. Un <span>graf parţial</span> al lui <span>G</span>, este un graf <span>G1=(X,V)</span>, cu V&sube;U. Astfel spus, un graf parţial <span>G1</span> al lui <span>G</span>, este chiar <span>G</span>, sau se obţine din <span>G</span> <span>păstrând toate vârfurile</span> şi <span>suprimând nişte muchii</span>.
+</p>
+
+<p>
+    <span>Exemplu</span>:   Pentru graful <span>G=(X,U)</span> de mai jos, construim alăturat graful parţial obţinut prin eliminarea muchiilor ce trec prin vârful 4. Graful parţial obţinut este <span>G1=(X,V)</span>, unde <span>X={1,2,3,4,5,6,7}</span>, iar <span>V={u<sub>1</sub>,u<sub>2</sub>,u<sub>5</sub>}</span>. S-au eliminat muchiile u<sub>3</sub> şi u<sub>4</sub> care trec prin nodul 4.
+
+</p>
+<div style="display: block; margin-left: auto; margin-right: auto; width: 80%;">
+<img class="graf1" src="../media/graf-partial1.png">
+<img class="graf1" src="../media/graf-partial2.png" style="float: right;">
+</div>
+
+<p>
+        <span>Definiţie</span>:  Fie graful <span>G=(X,U)</span>. Un <span>subgraf</span> al lui G, este un graf <span>G1=(Y,T)</span>, unde Y&sub;X şi T&sub;U, iar T va conţine numai muchiile care au ambele extremităţi în Y. Astfel spus, un subgraf G1 al lui G, se obţine din G <span>eliminând nişte vârfuri</span> şi <span>toate muchiile incidente</span> cu aceste vârfuri eliminate.
+</p>
+<img src="../media/subgraf.png" style="float:right; height:200px; width:300px;">
+<p>
+    <span>Exemplu</span>:   Pentru graful <span>G=(X,U)</span> de mai sus, construim <span>subgraful</span> obţinut prin eliminarea vârfurilor 1 şi 6 , respectiv prin eliminarea muchiilor u<sub>1</sub> şi u<sub>5</sub> incidente cu aceste vârfuri. 
+</p>
+
+<p>
+    <span>Teoremă</span>: Numărul de grafuri parţiale ale unui graf cu <span>m</span> muchii este egal cu <span>2<sup>m</sup></span>.
+</p>
+<p>
+    <span>Teoremă</span>: Numărul de subgrafuri ale unui graf cu <span>n</span> noduri este egal cu <span>2<sup>n</sup> -1</span>.
+</p>
+
+</div>
+
+<div >
+    <span class="anchor" id="d"></span>
+    <h2>Graf complet şi graf bipartit</h2>
+    <div class="col">
+    <p>
+        <span>Definiţie</span>: Un <span>graf complet</span> este un graf neorientat simplu în care fiecare pereche de noduri distincte este conectată printr-o muchie.
+        Graful complet cu <span>n</span> noduri este notat cu <span>K<sub>n</sub></span>. </p>
+    <p>
+        <span>Teoremă</span>: <span>K<sub>n</sub></span> are <span>n(n − 1)/2</span> muchii.
+        <br><span>Exemplu</span>: K<sub>5</sub>
+    </p>
+    <img src="../media/graf-complet.png" class="graf">
+    </div>
+
+    <div class="col">
+
+        <p>
+            <span>Definiţie</span>: Se numeşte <span>graf bipartit</span>, un graf <span>G=(X,U)</span> cu proprietatea că există două mulţimi <span>A</span> şi <span>B</span> incluse în X, astfel încât: 
+        </p>
+        <p style="white-space:pre-line">•	<span>A &cap; B = &empty; , A &cup; B =X</span>
+            •	toate muchiile grafului au o extremitate în mulţimea A şi cealaltă extremitate în mulţimea B
+        </p>
+        <img src="../media/graf-bipartit.png" style="float: right; width: 50%;">
+        <p>
+            <span>Exemplu</span>:   Fie G=(X,U), unde X={1,2,3,4,5,6,7},
+            U={u1,u2,u3,u4}. Cu mulţimile <span>A={1,2,3}</span> şi <span>B={4,5,6,7}</span>
+            generăm graful bipartit alăturat. Se observă că 
+            A &cap; B = &empty;  şi  A &cup; B =X, iar fiecare muchie are o 
+            extremitate  în A şi o extremitate în B.
+        </p>
+
+ 
+</div>
+
+    <p style="clear:both; padding-top:20px;">
+            <span>Definiţie</span>: Se numeşte <span>graf bipartit complet</span>, un graf bipartit cu proprietatea că pentru <span>orice vârf</span> x din mulţimea A şi <span>orice vârf</span> y din mulţimea B, există muchia <span>(x,y)</span> (unde A şi B sunt cele două mulţimi care <span>partiţionează</span> mulţimea vârfurilor X). Dacă mulţimea A are <span>p</span> elemente, iar mulţimea B, <span>q</span> elemente, un <span>graf bipartit complet</span> se mai notează cu K<sub>p,q</sub>.
+        </p>
+        <p>
+                <span>Teoremă</span>: Un graf bipartit complet <span>K<sub>p,q</sub></span> are <span>p*q</span> muchii.
+        </p>
+</div>
+
+<div>
+    <span class="anchor" id="e"></span>
+    <h2>Noţiunile de lanţ şi ciclu</h2>
+<div class="col">
+    <p>
+    <span>Definiţie</span>: Se numeşte <span>lanţ</span> în graful G=(X,U), o succesiune de vârfuri z<sub>1</sub>,z<sub>2</sub>,...,z<sub>k</sub>, unde z<sub>1</sub>, z<sub>2</sub>,...,z<sub>k</sub> &isin; X, cu proprietatea că <span>oricare două vârfuri consecutive sunt adiacente</span>, adică există muchiile [z<sub>1</sub>,z<sub>2</sub>], [z<sub>2</sub>,z<sub>3</sub>],...,[z<sub>k-1</sub>,z<sub>k</sub>] &isin; U. 
+    Vârfurile z<sub>1</sub> şi z<sub>k</sub> se numesc <span>extremităţile lanţului</span>, iar <span>numărul de muchii</span> care intră în componenţa sa reprezintă <span>lungimea</span> lanţului.
+    </p>
+
+</div>
+
+<div class="col">
+    <img src="../media/graf-lanturi.png" style="float:right; height: auto; min-height: 250px;  width: 50%;">
+<p style="white-space:pre-wrap;"><span>Exemplu</span>: În graful din figura alăturată putem distinge <span>lanţurile</span>:
+        <span>L1=(1,2,3,5,4,8)
+        L2=(1,2,3,2)
+        L3=(9,3,5,4,3,2)
+        L4=(6,7,3,5,4,8)</span>
+</p>
+</div>
+
+<p style="clear:both; padding-top:50px">
+        Un lanţ poate fi interpretat ca un traseu 
+        care pleacă din vârful z<sub>1</sub> şi ajunge în vârful z<sub>k</sub>,
+        trecând prin mai multe vârfuri şi parcurgând
+        mai multe muchii. De exemplu, lanţul <span>L1=(1,2,3,5,4,8)</span> pleacă din vârful <span>z<sub>1</sub>=1</span>, şi parcurgând muchiile
+        <span>[1,2], [2,3], [3,5], [5,4], [4,8]</span> (<span>în acestă ordine</span>) ajunge în vârful <span>z<sub>k</sub>=8</span>. Acest lanţ are lungimea <span>5</span>, întrucât include cinci muchii.        
+</p>
+
+<p>
+    <span>Observaţie</span>:   Dacă vârfurile z<sub>1</sub>, z<sub>2</sub>,...,z<sub>k</sub> sunt <span>distincte două câte două</span>, lanţul se numeşte <span>elementar</span>; în caz contrar, lanţul este <span>ne-elementar</span>.
+</p>
+
+<p>
+    <span>Exemplu</span>: Lanţul <span>L4</span> din exemplul anterior este <span>elementar</span>, pentru că nici un vârf nu apare de două ori. La fel, lanţul <span>L1</span>. În schimb, lanţurile <span>L2</span> şi <span>L3</span> sunt <span>ne-elementare</span>: în <span>L2</span> se repetă vârful 2, iar în <span>L3</span> se repetă vârful 3. 
+</p>
+<p>
+    <span>Definiţie</span>: Se numeşte <span>ciclu</span> într-un graf, un lanţ <span>L=(z<sub>1</sub>, z<sub>2</sub>,...,z<sub>k</sub>)</span> cu proprietatea că z<sub>1</sub>=z<sub>k</sub> şi muchiile [z<sub>1</sub>,z<sub>2</sub>], [z<sub>2</sub>,z<sub>3</sub>],...,[z<sub>k-1</sub>,z<sub>k</sub>] sunt <span>distincte</span> două câte două. 
+</p>
+<p>
+     <span>Exemplu</span>: În graful din figura de mai sus, <span>C1=(3,4,5,3,7,6,1,2,3)</span>, <span>C2=(1,2,3,7,6,1)</span>, <span>C3=(3,5,4,9,3)</span> sunt <span>cicluri</span>. De exemplu, C3 este ciclu, deoarece traseul pe care îl descrie porneşte din vârful 3 şi ajunge tot în vârful 3, şi în plus muchiile [3,5], [5,4], [4,9] şi [9,3] sunt distincte două câte două (nu apare aceeaşi muchie de mai multe ori). 
+</p>
+<p>
+    <span>Observaţie</span>: Dacă într-un ciclu, toate vârfurile cu excepţia primului şi a ultimului sunt distincte două câte două, atunci ciclul se numeşte <span>elementar</span>; în caz contrar, el este <span>ne-elementar</span>. 
+</p>
+<p>
+    <span>Exemplu</span>:  Ciclurile C2 şi C3 din exemplul anterior sunt <span>elementare</span>, iar C1 este <span>ne-elementar</span> (în C1 vârful 3 apare şi ca vârf intermediar, adică traseul descris mai trece odată prin vârful 3 pe lângă faptul că porneşte din el şi se întoarce tot în el).
+</p>
+<p>
+    <span>Observaţie</span>: Un graf neorientat care <span>nu conţine</span> cicluri se numeşte <span>aciclic</span>.
+</p>
+</div>
+
+<div>
+    <span class="anchor" id="f"></span>
+    <h2>Grafuri hamiltoniene şi euleriene</h2>
+    <div class="titlu_img" style="float:right; margin-left:20px; height: 390px;">
+        <img src="../media/Graf-hamiltonian.png" class="titlu_img" style="float:right; height: 300px; width:250px;">
+        <p style="text-align: center; font-size:20px;">În graful alăturat, un exemplu de ciclu hamiltonian este: <span style="font-size:20px;">CH=[1,2,3,5,4,6,7,1]</span>
+        </p>
+     </div>
+    <div class="titlu_img" style="float:left; margin-right:20px; height: 390px;">
+        <img src="../media/graf-eulerian.png" class="titlu_img" style="float:left; height: 300px; width:250px;">
+        <p style="text-align: center; font-size:20px;">În graful alăturat, un ciclu eulerian este secvenţa: <span style="font-size:20px;">CE=</span><span style="font-size:15px;">[1,10,2,3,4,5,6,3,7,8,10,9,11,12,10,13,1]</span>
+        </p>
+     </div>
+    <p style="white-space:pre-line"><span>Definiţie</span>: Într-un graf <span>conex</span> G=(X,U) se numeşte <span>ciclu hamiltonian</span> (<span>CH</span>) un <span>ciclu elementar</span> care conţine <span>toate</span> vârfurile grafului.
+      <br> <span>Definiţie</span>: Se numeşte <span>graf hamiltonian</span> un graf care <span>conţine</span> un <span>ciclu hamiltonian</span>. 
+    </p>
+    <p>
+        <span>Teoremă</span>: Graful <span>complet</span> K<sub>n</sub> este hamiltonian.
+    </p> 
+    <p>
+        O condiţie <span>suficientă</span> ca un graf să fie hamiltonian a fost enunţată de matematicianul Dirac în 1952 (există grafuri care sunt hamiltoniene dar nu satisfac teorema lui Dirac).
+    </p>
+    <p>
+        <span>Teorema lui Dirac</span>: Dacă G=(X,U) este un graf cu <span>n&ge;3</span> vârfuri astfel încât gradul fiecărui vârf x&isin;X satisface condiţia <span>grad(x)&ge;n/2</span>, atunci G este hamiltonian. 
+    </p>
+    <p><span>Definiţie</span>: Fie un graf G=(X,U). Se numeşte <span>ciclu eulerian</span> (<span>CE</span>) un ciclu care conţine <span>toate muchiile</span> grafului. Un graf care conţine un <span>ciclu eulerian</span> se numeşte <span>graf eulerian</span>.</p>
+    <p><span>Teoremă</span>: Un graf G <span>fără vârfuri izolate</span> este eulerian <span>dacă şi numai dacă</span> este <span>conex</span> şi <span>gradele tuturor vârfurilor</span> sunt numere <span>pare</span> (<span>condiţie necesară şi suficientă</span>).</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css">
+    <link href="../styles/grafuri_orientate.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/ico" href="../media/logo.jpg" /> 
+    <title>Teoria Grafurilor</title>
+</head>
+<body>
+<header>
+
+    <a class="imglink" href="../index.html"><img class="header" src="../media/logo1.jpg"></a>
+        
+    <h1>Teoria Grafurilor</h1>
+        
+ <ul>
+    <li><a href="introducere.html" class="navlink"><strong>Introducere</strong></a>
+    <ul>
+        <li><a href="introducere.html#a" class="navlink"><strong>Scurt istoric al teoriei grafurilor</strong></a></li>
+        <li><a href="introducere.html#b" class="navlink"><strong>Problema podurilor din Königsberg</strong></a></li>
+        <li><a href="introducere.html#c" class="navlink"><strong>Grafuri în viața reala</strong></a></li>
+    </ul>
+    </li>
+    <li><a href="#" class="navlink"><strong>Grafuri neorientate</strong></a>
+    <ul>
+        <li><a href="grafuri_neorientate.html#a" class="navlink"><strong>Noţiunea de graf neorientat</strong></a></li>
+        <li><a href="grafuri_neorientate.html#b" class="navlink"><strong>Reprezentarea grafurilor neorientate</strong></a></li>
+        <li><a href="grafuri_neorientate.html#c" class="navlink"><strong>Noţiunile de graf parţial şi subgraf</strong></a></li>
+        <li><a href="grafuri_neorientate.html#d" class="navlink"><strong>Graf complet şi graf bipartit</strong></a></li>
+        <li><a href="grafuri_neorientate.html#e" class="navlink"><strong>Noţiunile de lanţ şi ciclu</strong></a></li>
+        <li><a href="grafuri_neorientate.html#f" class="navlink"><strong>Grafuri hamiltoniene şi euleriene</strong></a></li>
+    </ul>
+    </li>
+    <li><a href="#" class="navlink"><strong>Grafuri orientate</strong></a>
+    <ul>
+        <li><a href="#a" class="navlink"><strong>Noţiunea de graf orientat</strong></a></li>
+    </ul>
+    </li>
+    <li><a href="#" class="navlink"><strong>Arbori</strong></a></li>
+</ul>
+</header>
+
+<div>
+    <span class="anchor" id="a"></span>
+    <h2>Noţiunea de graf orientat</h2>
+
+    <div class="titlu_img" style="float:right; margin-left:20px; height: 390px;">
+        <img src="../media/Graf-hamiltonian.png" class="titlu_img" style="float:right; height: 300px; width:250px;">
+        <p style="text-align: center; font-size:20px;"><span>Exemplu: G=(X,U),   X={1,2,3},  U={(1,2), (2,1), (1,3), (3,2)}
+</span></p>
+     </div>
+    <p style="white-space:pre-line"><span>Definiţie</span>:  Se numeşte <span>graf orientat</span> o pereche ordonată de mulţimi G=(X,U) unde:
+        -<span>X</span> este o mulţime finită şi nevidă numită mulţimea vârfurilor (nodurilor)
+        -<span>U</span> este o mulţime formată din <span>perechi ordonate</span> de elemente din X numită mulţimea arcelor
+    </p>
+    <p>
+        Orice arc u&isin;U va fi notat cu <span>u=(x,y)</span> şi spunem că x este extremitatea iniţială iar y este extremitatea finală a arcului u. Într-un <span>graf orientat</span> arcul <span>(x,y)</span> nu este totuna cu arcul <span>(y,x)</span>. 
+    </p>
+    <p>
+        Ca şi în cazul grafurilor neorientate, dacă există arcul u=(x,y) spunem că vârfurile x şi y sunt <span>adiacente</span> şi amândouă sunt <span>incidente</span> cu arcul u.  
+    </p>
+    <p>
+        Conform definiţiei de mai sus sunt admise şi arce de forma <span>(x,x)</span>, adică arce de la un nod la el însuşi. Aceste arce se numesc <span>bucle</span>. De asemenea sunt admise şi arce <span>identice</span> de forma (x,y). Dacă numărul arcelor identice nu depăşeşte numărul natural p, spunem că G este un <span>p-graf</span>. Conform acestor definiţii, grafurile tratate în continuare sunt <span>1-grafuri</span> fără bucle.
+    </p>
+    <p>
+        Observăm că pentru grafurile orientate sunt două tipuri de arce incidente cu un vârf: arce ce <span>intră</span> şi arce ce <span>ies</span> din acel vârf. Vom defini deci două două grade distincte care să corespundă numărului arcelor din fiecare categorie.
+    </p>
+    <p>
+    <span>Definiţie</span>: Numim <span>grad exterior</span> al unui vârf x&isin;X, notat cu <span>d<sup>+</sup>(x)</span>, numărul arcelor de forma (x,y)&isin;U, adică numărul arcelor ce <span>ies</span> din vârful x. 
+    </p>
+    <p>
+    <span>Definiţie</span>: Numim <span>grad interior</span> al unui vârf x&isin;X, notat cu <span>d<sup>-</sup>(x)</span>, numărul arcelor de forma (y,x)&isin;U, adică numărul arcelor care <span>intră</span> în vârful x.
+    </p>
+    <p style="white-space:pre-line">De asemenea vom nota cu:
+            -	<span>&Gamma;<sup>+</sup>(x)</span>={y&isin;X|(x,y)&isin;U}  mulţimea <span>succesorilor</span> lui x
+            -	<span>&Gamma;<sup>-</sup>(x)</span>={y&isin;X|(y,x)&isin;U}  mulţimea <span>predecesorilor</span> lui x
+            -	<span>&omega;<sup>+</sup>(x)</span>={u=(x,y)|u&isin;U}  mulţimea arcelor ce <span>ies</span> din x
+            -	<span>&omega;<sup>-</sup>(x)</span>={u=(y,x)|u&isin;U}  mulţimea arcelor ce <span>intră</span> în x
+    </p>
+    <p>
+         De asemenea, se poate arăta că într-un graf orientat G cu mulţimea vârfurilor X şi m muchii are loc relaţia : <span>&sum;d<sup>+</sup>(x)=&sum;d<sup>-</sup>(x)=m</span>.
+    </p>
+    <p>
+        Spre deosebire de cazul grafurilor neorientate, un <span>lanţ</span> într-un <span>graf orientat</span> se defineşte ca un şir de arce <span>L=[u<sub>1</sub>,u<sub>2</sub>,...,u<sub>k</sub>]</span> cu proprietatea că oricare două arce vecine <span>u<sub>i</sub>, u<sub>i+1</sub></span> au o extremitate comună. În definirea unui lanţ <span>nu</span> se ţine cont de <span>orientarea</span> arcelor. 
+    </p>
+    <img src="../media/Graf-hamiltonian.png" style="float:left; height: 300px; width:250px; margin-right:20px;">
+    <p>
+        <span>Exemplu</span>: Pentru graful din figura alăturată putem defini lanţurile: <span>L1=(u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>)</span>, <span>L2=(u<sub>1</sub>,u<sub>4</sub>,u<sub>5</sub>,u<sub>3</sub>)</span> ambele de extremităţi 1 şi 4.
+    </p>
+    <p>
+        Un <span>drum</span> într-un <span>graf orientat</span> G=(X,U) cu X=(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>) este un şir de vârfuri notat D=(x<sub>i0</sub>,...,x<sub>im</sub>) cu proprietatea  că oricare două vârfuri <span>succesive</span> reprezintă arce în graf.
+    </p>
+    <p>
+        <span>Exemplu</span>: Pentru graful din figura alăturată, D1=(1,2,1,3) şi D2=(1,2,3) sunt drumuri în graf.
+    </p>
+    <p>
+        Aşadar, un drum poate fi privit ca un lanţ în care toate arcele au <span>aceeaşi orientare</span> dată de sensul de deplasare de la x<sub>i0</sub> către x<sub>im</sub>. 
+    </p>
+    <p>
+        Dacă vârfurile =(x<sub>i0</sub>,.....,x<sub>im</sub>) sunt <span>distincte</span>, drumul se numeşte <span>elementar</span>.
+    </p>
+    <p>
+        <span>Exemplu</span>: În exemplul anterior D2 este drum elementar iar D1 nu este elementar.
+    </p>
+    <p>
+        Dacă D=(x<sub>i0</sub>,.....,x<sub>im</sub>) este un drum cu x<sub>i0</sub>=x<sub>im</sub> şi arcele (x<sub>i0</sub>,x<sub>i1</sub>),...,(x<sub>im-1</sub>,x<sub>im</sub>) sunt <span>distincte</span>, drumul D se numeşte <span>circuit</span>.
+    </p>
+    <img src="../media/Graf-hamiltonian.png" style="float:right; height: 300px; width:250px; margin-left:20px;">
+    <p>
+        Dacă toate vârfurile circuitului cu excepţia primului şi ultimului nod sunt distincte două câte două circuitul se numeşte <span>elementar</span>.
+    </p>
+    <p>
+        <span>Exemplu</span>: Pentru graful din figura alăturată <span>D1=(1,2,3,4,5,6,4,1)</span>, <span>D2=(1,2,3,4,1)</span> şi <span>D3=(4,5,6,4)</span> sunt circuite dar numai D2 şi D3 sunt <span>elementare</span>.            
+    </p>
+</div>
+
+</body>
+</html>

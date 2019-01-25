@@ -1,0 +1,12 @@
+.graf
+{
+    width:70%; 
+    height:300px;
+    margin-left:100px;
+}
+.graf1
+{
+    height: 300px;
+    width: 45%;
+    display: inline;
+}
