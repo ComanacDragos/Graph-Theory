@@ -151,6 +151,61 @@
 <span class="anchor" id="b"></span>
 <h2>Metode de reprezentare a grafurilor orientate</h2>
 
+<p>
+     Pentru exemplificarea metodelor de reprezentare specifice grafurilor orientate vom considera în cele ce urmează următorul graf: <span>G=(X,U), n=4, m=5, X={1,2,3,4}, U={u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>,u<sub>4</sub>,u<sub>5</sub>}</span>.
+</p>
+<img src="../media/graf-partial2.png" style="height: 250px;width: 30%; margin: auto; display: block;">
+
+<h2>Matricea de adiacenţă</h2>
+
+<p>
+   <span>Matricea de adiacenţă</span> asociată unui graf orientat G=(X,U) se defineşte ca şi în cazul grafurilor neorientate: <span>A=(a<sub>ij</sub>)<sub>nxn</sub> cu a<sub>ij</sub>= 1 dacă (x<sub>i</sub>,x<sub>j</sub>)&isin;U; 0 dacă (xi,xj)&notin;U;</span>
+</p>
+<p>
+    Pentru graful considerat, matricea de adiacenţă are următoarea structură:
+</p>
+
+<table>
+    <tr>
+        <td>Linia</td>
+        <td colspan="4">Coloana</td>
+    </tr>
+    <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+    </tr>
+    <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+    </tr>
+    <tr>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+    </tr>
+    <tr>
+            <td>4</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>    
+</table>
+
+<span>Observaţii:</span>
+<p>
+    1.Matricea de adiacenţă asociată unui <span>graf orientat nu mai este neapărat simetrică</span> ca în cazul grafurilor neorientate
+<br><br>2.<span>&sum;<sup style="position: relative; top:-11px; margin-left:-15px;">n</sup><sub style="position: relative; top:15px; margin-left:-10px;">j=1</sub>a<sub >ij</sub></span>  reprezintă <span>gradul exterior</span> al nodului x<sub>i</sub> (suma elementelor de pe linia i)
+<br><br>3.<span>&sum;<sup style="position: relative; top:-11px; margin-left:-15px;">n</sup><sub style="position: relative; top:15px; margin-left:-10px;">j=1</sub>a<sub >ij</sub></span> reprezintă <span>gradul interior</span> al nodului x<sub>j</sub> (suma elementelor de pe coloana j)
+</p>
 </div>
 
 </body>
