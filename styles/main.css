@@ -133,6 +133,8 @@ table
     width: 50%;
     margin: auto;
     font-weight: 900;
+    font-size: 17px;
+    
 }
 td
 {
@@ -145,4 +147,8 @@ td
     float: left;
     width: 49%;
     margin-left:5px;
+}
+.col:nth-of-type(even) p
+{
+    padding-left: 20px;
 }

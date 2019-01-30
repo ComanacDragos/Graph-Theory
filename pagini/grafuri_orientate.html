@@ -144,6 +144,10 @@
     <p>
 	Spre deosebire de grafurile neorientate la care există un graf complet unic cu n vârfuri, pentru un n dat, putem construi mai multe grafuri orientate complete având numărul de vârfuri <span>n</span>. Acest lucru decurge din faptul că două vârfuri x,y sunt adiacente în oricare din următoarele situaţii: există arcul (x,y), există arcul (y,x), există ambele arce (x,y), (y,x). Cum sunt <span>C<sup style="font-size:15px;">2</sup><sub style="font-size: 15px;position: relative; left: -7px;">n</sub></span> posibilităţi de a alege două vârfuri distincte iar pentru fiecare dintre acestea există trei situaţii ca ele să fie adiacente, rezultă că pentru un n dat sunt <span>3<sup>C<sup style="font-size:15px;">2</sup><sub style="font-size: 15px;position: relative; left: -7px;">n</sub></sup></span> grafuri <span>complete cu n vârfuri</span>. 
    </p>
+
+   <p>
+       <span>Teoremă</span>:Numărul total de grafuri orientate care se pot forma cu <span>n noduri</span> este <span>4<sup>C<sup style="font-size:15px;">2</sup><sub style="font-size: 15px;position: relative; left: -7px;">n</sub></sup></span>.
+   </p>
 </div>
 
 <div style="clear:both">
@@ -156,7 +160,7 @@
 </p>
 <img src="../media/graf-partial2.png" style="height: 250px;width: 30%; margin: auto; display: block;">
 
-<h2>Matricea de adiacenţă</h2>
+<h3>Matricea de adiacenţă</h3>
 
 <p>
    <span>Matricea de adiacenţă</span> asociată unui graf orientat G=(X,U) se defineşte ca şi în cazul grafurilor neorientate: <span>A=(a<sub>ij</sub>)<sub>nxn</sub> cu a<sub>ij</sub>= 1 dacă (x<sub>i</sub>,x<sub>j</sub>)&isin;U; 0 dacă (xi,xj)&notin;U;</span>
@@ -206,6 +210,138 @@
 <br><br>2.<span>&sum;<sup style="position: relative; top:-11px; margin-left:-15px;">n</sup><sub style="position: relative; top:15px; margin-left:-10px;">j=1</sub>a<sub >ij</sub></span>  reprezintă <span>gradul exterior</span> al nodului x<sub>i</sub> (suma elementelor de pe linia i)
 <br><br>3.<span>&sum;<sup style="position: relative; top:-11px; margin-left:-15px;">n</sup><sub style="position: relative; top:15px; margin-left:-10px;">j=1</sub>a<sub >ij</sub></span> reprezintă <span>gradul interior</span> al nodului x<sub>j</sub> (suma elementelor de pe coloana j)
 </p>
+
+<h3>Matricea vârfuri-arce (matricea de incidenţă)</h3>
+
+<p>Matricea <span>vârfuri-arce</span> sau matricea de incidenţă a grafului G=(X,U) cu <span>n vârfuri</span> şi <span>m arce</span> este o matrice <span>B=(b<sub>ij</sub>)<sub>nxm</sub></span> unde:</p>
+
+<p style="white-space:pre-wrap; margin: auto;width: 50%;"><span>b<sub>ij</sub>= 1  dacă xi este extremitatea iniţială a arcului u<sub>j</sub>
+      -1 dacă xi este extremitatea finală a arcului u<sub>j</sub>  		 
+       0  dacă xi nu este incident cu arcul u<sub>j</sub></span>
+    </p>
+
+<table>
+<tr>
+    <td>Vârful</td>
+    <td colspan="5">Muchia</td>
+</tr>
+<tr>
+    <td>-</td>
+    <td>u<sub>1</sub></td>
+    <td>u<sub>2</sub></td>
+    <td>u<sub>3</sub></td>
+    <td>u<sub>4</sub></td>
+    <td>u<sub>5</sub></td>
+</tr>
+<tr>
+    <td>1</td>
+    <td>-1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>1</td>
+    <td>-1</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>0</td>
+    <td>-1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td>-1</td>
+    <td>-1</td>
+    <td>1</td>
+</tr>
+
+</table>
+<span>Observaţii:</span>
+<p>
+    1.Pe fiecare coloană <span>j</span> există exact <span>două elemente nenule</span> şi anume: unul egal cu <span>1</span> (ce corespunde extremităţii <span>iniţiale</span> a arcului <span>u<sub>j</sub></span>) şi unul egal cu <span>-1</span> (ce corespunde extremităţii <span>finale</span> a arcului <span>u<sub>j</sub></span>)
+</p>
+<p>
+    2.Numărul de elemente <span>1</span> de pe <span>linia i</span> reprezintă <span>gradul exterior</span> al lui <span>x<sub>i</sub></span>, iar numărul de elemente <span>-1</span> de pe <span>linia i</span> indică <span>gradul interior</span> al lui <span>x<sub>i</sub></span>; <span>o linie cu toate elementele 0 corespunde unui vârf izolat</span>.
+</p>
+
+<h3>Listele vecinilor</h3>
+
+<p style="white-space:pre-line;">Pentru fiecare nod x&isin;G se construiesc două liste ale vecinilor săi:
+    -	L<sup>+</sup>(x) lista <span>vecinilor succesori</span>; conţine nodurile ce sunt <span>extremităţi finale</span> ale arcelor ce <span>ies</span> din nodul <span>x</span>;
+    -	L<sup>-</sup>(x) lista <span>vecinilor predecesori</span>; conţine nodurile ce sunt <span>extremităţi iniţiale</span> ale arcelor ce <span>intră</span> în nodul <span>x</span>;
+</p>
+<p>
+    Pentru graful considerat, cele două liste au următoarea structură:
+</p>
+
+<table>
+    <tr>
+        <td>Nodul x</td>
+        <td>L<sup>+</sup>(x)</td>
+        <td>L<sup>-</sup>(x)</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>&empty;</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>1,,3,4</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>2</td>
+        <td>2,3</td>
+    </tr>
+</table>
+
+<span>Observaţii:</span>
+<p>
+    1.Această metodă de reprezentare se implementează cu ajutorul listelor alocate dinamic.
+</p>
+<p>
+    2.	Se observă că <span>L<sup>+</sup>(x)</span> este ansamblul mulţimilor <span>&Gamma;<sup>+</sup>(x)</span> pentru <span>x={1,2,…,n}</span>, iar <span>L<sup>-</sup>(x)</span> este ansamblul mulţimilor <span>&Gamma;<sup>-</sup>(x)</span> pentru <span>x={1,2,…,n}</span>.
+</p>
+
+<h3>Vectorul muchiilor</h3>
+
+<div class="col">
+<p style="white-space:pre-line;">Conform acestei metode de reprezentare, fiecare arc al grafului poate fi privit ca o înregistrare cu două componente, adică cele două noduri care constituie extremităţile arcului:
+    -	<span>nod_in</span>: nodul din care iese arcul (<span>iniţial</span>)
+    -	<span>nod_sf</span>: nodul în care intră arcul (<span>de sfârşit</span>)
+    </p>
+<p>Putem defini tipul înregitrare care descrie un arc astfel:</p>
+<p style="white-space:pre-wrap; margin: auto;width: 50%;"><span>struct ARC{
+    int nod_in,nod_sf;
+};</span>
+</p>
+</div>
+
+<div class="col">
+
+<p>
+    Numărul real de elemente utilizate în vectorul v este numărul m de arce din graful G descris, adică elementele v[1], v[2],.....,v[m]. Fiecare element v[i] (i1...n) este un arc în graful G având extremităţile v[i].nod_in (extremitatea iniţială), respectiv v[i].nod_sf (extremitatea finală).
+</p>
+
+</div>
 </div>
 
 </body>
