@@ -2,9 +2,22 @@
 <html>
 <head>
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
-    <link href="../styles/grafuri_neorientate.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/ico" href="../media/logo.jpg" /> 
+    <link rel="icon" type="image/ico" href="../media/logo.jpg"> 
     <title>Teoria Grafurilor</title>
+<style>
+.graf
+{
+    width:70%; 
+    height:300px;
+    margin-left:100px;
+}
+.graf1
+{
+    display: inline-block;
+    width: 45%;
+    height: 300px;
+}
+</style>
 </head>
 <body >
 
@@ -33,7 +46,7 @@
     </ul>
     </li>
     <li><a href="grafuri_orientate.html" class="navlink"><strong>Grafuri orientate</strong></a></li>
-    <li><a href="#" class="navlink"><strong>Arbori</strong></a></li>
+    <li><a href="arbori.html" class="navlink"><strong>Arbori</strong></a></li>
 </ul>
 
 </header>
@@ -42,16 +55,16 @@
         <span class="anchor" id="a"></span>
     <h2>Noţiunea de graf neorientat</h2>
     <div class="col">
-    <p>
-    <span>Definiţie</span> : Se numeşte <span>graf neorientat</span> o pereche ordonată de mulţimi (X,U) , unde:
-<br>•	X este o mulţime finită şi nevidă de elemente numite <span>vârfuri</span> sau <span>noduri</span>;
-<br>•	U este o mulţime de perechi neordonate de câte două elemente din X, numite <span>muchii</span> sau <span>arce</span>;
+    
+    <p style="white-space:pre-line;"><span>Definiţie</span> : Se numeşte <span>graf neorientat</span> o pereche ordonată de mulţimi (X,U) , unde:
+    •	X este o mulţime finită şi nevidă de elemente numite <span>vârfuri</span> sau <span>noduri</span>;
+    •	U este o mulţime de perechi neordonate de câte două elemente din X, numite <span>muchii</span> sau <span>arce</span>;
     </p>
-    <p>
-    Un graf neorientat poate fi reprezentat sub forma unei figuri geometrice alcătuită din puncte (vârfuri,noduri) şi linii drepte sau curbe care unesc aceste puncte (muchii, arce). Respectând o anumită tradiţie pe care o regăsim în literatura de specialitate, vom folosi:
-<br>•	pentru grafuri neorientate termenii de vârf şi muchie;
-<br>•	pentru grafurile orientate termenii de nod şi arc;
-<br>Dacă o muchie trece prin nodurile x şi y, atunci ea se notează [x,y] sau (x,y).         
+  
+    <p style="white-space:pre-line;">Un graf neorientat poate fi reprezentat sub forma unei figuri geometrice alcătuită din puncte (vârfuri,noduri) şi linii drepte sau curbe care unesc aceste puncte (muchii, arce). Respectând o anumită tradiţie pe care o regăsim în literatura de specialitate, vom folosi:
+    •	pentru grafuri neorientate termenii de vârf şi muchie;
+    •	pentru grafurile orientate termenii de nod şi arc;
+    Dacă o muchie trece prin nodurile x şi y, atunci ea se notează [x,y] sau (x,y).         
     </p>
     <p style="white-space:pre-line;">Pe caz general, într-un graf neorientat G=(X,U), notăm:
             •	m - numărul muchiilor;
@@ -80,14 +93,11 @@
 </p>
 
 <p style="white-space:pre-line"><span>Exemplu</span>:  În graful din figura de mai sus avem : d(1)=d(5)=d(6)=1, d(2)=3, d(3)=d(4)=2, d(7)=0.
-
 •	Un vârf care are gradul 0, se numeşte <span>vârf izolat</span> (de exemplu, vârful 7);
 •	Un vârf care are gradul 1, se numeşte <span>vârf terminal</span> (de exemplu, vârfurile 5 şi 6);
 </p>
 
-
 </div>
-
 
 <p style="white-space:pre-line; clear: both;"><span>Teoremă</span>: Într-un graf G=(X,U) cu <span>n vârfuri</span> şi <span>m muchii</span>, suma gradelor tuturor vârfurilor este egală cu <span>2*numărul muchiilor</span>: <span>d(1)+d(2)+...+d(n)=2*m</span>.
             <br>   <span>Consecinţă</span>:   În orice graf neorientat G=(X,U) există un număr par de vârfuri cu grad impar.
@@ -215,7 +225,6 @@
             <td>3</td>
             <td>-</td>
         </tr>
-        
     
     </table>
 

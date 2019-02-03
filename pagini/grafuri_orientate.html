@@ -2,9 +2,17 @@
 <html>
 <head>
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
-    <link href="../styles/grafuri_orientate.css" rel="stylesheet" type="text/css">
-    <link rel="icon" type="image/ico" href="../media/logo.jpg" /> 
+    <link rel="icon" type="image/ico" href="../media/logo.jpg"> 
     <title>Teoria Grafurilor</title>
+    <style>
+    .graf1
+{
+    height: 300px;
+    width: 40%;
+    float: left;
+    margin-left:50px;
+}
+    </style>
 </head>
 <body>
 <header>
@@ -35,9 +43,10 @@
     <ul>
         <li><a href="#a" class="navlink"><strong>Noţiunea de graf orientat</strong></a></li>
         <li><a href="#b" class="navlink"><strong>Metode de reprezentare a grafurilor orientate</strong></a></li>
+        <li><a href="#c" class="navlink"><strong>Conexitate şi tare conexitate</strong></a></li>
     </ul>
     </li>
-    <li><a href="#" class="navlink"><strong>Arbori</strong></a></li>
+    <li><a href="arbori.html" class="navlink"><strong>Arbori</strong></a></li>
 </ul>
 </header>
 
@@ -336,13 +345,102 @@
 </div>
 
 <div class="col">
+<p>Graful în ansamblul său este o mulţime de arce, adică o mulţime de elemente de tipul <span>arc</span>. Astfel, definim graful ca un “vector de arce”, adică un vector ca cel de mai jos: <span>ARC v[50];</span>     
+</p>
+<p>
+    Numărul real de elemente utilizate în vectorul <span>v</span> este numărul <span>m</span> de arce din graful G descris, adică elementele <span>v[1], v[2],.....,v[m]</span>. Fiecare element <spnan>v[i]</spnan> (<span>i&isin;{1...n}</span>) este un arc în graful G având extremităţile <span>v[i].nod_in</span> (<span>extremitatea iniţială</span>), respectiv <span>v[i].nod_sf</span> (<span>extremitatea finală</span>).
+</p>
+<p>
+    <span>Observaţie</span>: Dacă graful orientat este ponderat, adică fiecare arc are ataşat un cost, se adaugă al treilea câmp în tipul <span>ARC</span>, semnificând costul ataşat unui arc din graf.
+</p>
+</div>
+
+<h3 style="clear:both;">Matricea costurilor</h3>
 
 <p>
-    Numărul real de elemente utilizate în vectorul v este numărul m de arce din graful G descris, adică elementele v[1], v[2],.....,v[m]. Fiecare element v[i] (i1...n) este un arc în graful G având extremităţile v[i].nod_in (extremitatea iniţială), respectiv v[i].nod_sf (extremitatea finală).
+    Această matrice se defineşte ca şi cea de la grafurile neorientate, cu observaţia că, asemeni matricei de adiacenţă, <span>nu mai este neapărat simetrică</span> faţă de diagonala principală. În funcţie de tipul de problemă ce trebuie rezolvată, absenţa unui arc se reprezintă printr-o valoare foarte mare (<span>+&infin;</span>) dacă determinăm cele mai scurte drumuri, respectiv printr-o valoare foarte mică (<span>-&infin;</span>), dacă determinăm cele mai lungi drumuri. Uzual, această matrice se notează <span>C=(c<sub>ij</sub>)<sub>nxn</sub></span>.
 </p>
 
+<h3>Matricea drumurilor</h3>
+<div class="col">
+<p>
+    Se numeşte matrice a drumurilor asociată grafului orientat G=(X,U), matricea <span>D=(d<sub>ij</sub>)<sub>nxn</sub></span> dată prin:
+</p>
+<p style="white-space:pre-wrap; margin: auto;width: 80%;"><span>d<sub>ij</sub>= 1 dacă există drum în graful G de la nodul i la nodul j
+       0 în caz contrar
+</span>
+</p>
 </div>
+<div class="col">
+<p>
+Se observă că matricea drumurilor are practic aceeaşi semnificaţie ca matricea lanţurilor pentru grafurile neorientate: <span>d[i][j]=1</span> semnifică existenţa unui traseu (o deplasare posibilă folosind arce din graf) de la punctul <span>i</span> până la punctul <span>j</span>.
+</p>
 </div>
+<p style="clear:both">
+    <span>Observaţii:</span>
+</p>
+<p>
+    1. Dacă <span>d[i][i]=1</span> înseamnă că există un circuit care trece prin nodul <span>i</span>.
+</p>
+<p>
+    2. Dacă linia i şi coloana i din matricea drumurilor conţin numai elemente nule deducem că i este un <span>vârf izolat</span> (nu există drumuri care să ducă la i şi nici care să plece din i).
+</p>
+<p>
+    3. Pentru a verifica dacă un nod i este <span>nod iniţial</span> (sau <span>nod sursă</span>), adică dacă există drumuri de la el la oricare alt nod, este suficient să verificăm dacă în matricea drumurilor toate elementele liniei i (exceptând eventual cel din coloana i) sunt egale cu 1.
+</p>
+<p>
+    4. Pentru a verifica dacă un nod i este <span>nod final</span> (sau <span>nod destinaţie</span>), adică dacă există drumuri de la oricare alt vârf la vârful i, este sufucient să verificăm dacă în matricea drumurilor toate elementele coloanei i (exceptând eventual cel de pe linia i) sunt egale cu 1.
+</p>
+</div>
+
+<div>
+
+<span id="c" class="anchor"></span>
+<h2>Conexitate şi tare conexitate</h2>
+
+<p>
+    <span>Definiţie</span>: Un graf orientat G=(X,U) se numeşte <span>conex</span> dacă pentru oricare două vârfuri distincte <span>x,y&isin;X</span> există în G un <span>lanţ de extremităţi x,y</span>.
+</p>
+<p>
+    Se numeşte <span>componentă conexă</span> a unui graf orientat G un subgraf conex al său maximal în raport cu acestă proprietate (oricare ar fi un vârf din subgraf nu există lanţ între acel vârf şi vârfurile care nu fac parte din subgraf).
+</p>
+<p><span>Exemplu</span>:</p>
+<img src="../media/Graf-hamiltonian.png" style="width:50%; margin:auto; height: 300px; display: block;">
+
+<p>
+    În figura de mai sus, graful G=(X,U) cu X={1,2,3,4} şi U={(1,2), (1,3), (3,2), (3,4)} este conex. El are o singură componentă conexă (graful însuşi). Graful G’=(X’,U’) cu X’={1,2,3,4,5,6} şi U’={(1,2), (2,3), (4,5), (6,5)} nu este conex, dar are două componete conexe şi anume subgrafurile generate de mulţimile de vârfuri X1={1,2,3} şi respectiv X2={4,5,6}.   
+</p>
+<p>
+    <span>Definiţie</span>:  Dacă G este un graf orientat, numim <span>graf suport</span> al lui G, graful neorientat obţinut prin înlocuirea fiecărui arc din G cu muchia corespunzătoare urmată de eliminarea muchiilor multiple.
+</p>
+<p><span>Exemplu</span>:</p>
+<img src="../media/Graf-hamiltonian.png" style="width:50%; margin:auto; height: 300px; display: block;">
+
+<p>
+    În desenul anterior este prezentat un graf orientat şi graful său suport, obţinut prin înlocuirea fiecărui arc cu muchia corespunzăroare, urmată de eliminarea muchiilor multiple.
+</p>
+<p>
+    <span>Un graf orientat este conex dacă şi numai dacă graful său suport este conex. </span>
+</p>
+<p>
+    <span>Definiţie</span>:  Un graf orientat G=(X,U) este <span>tare conex</span> dacă pentru oricare două noduri ale sale, <span>u,v&isin;X</span>, u&ne;v, există un drum de la <span>u</span> la <span>v</span> şi un drum de la <span>v</span> la <span>u</span>.
+</p>
+<p>
+    Un exemplu de graf tare conex este graful asociat circulaţiei rutiere; acesta trebuie să permită acces dus-întors între oricare două puncte deşi poate cuprinde străză cu sens unic. 
+</p>
+<p>
+    <span>Definiţie</span>: Se numeşte componentă tare conexă a unui graf orientat G=(X,U) un subgraf tare conex al său H=(Y,V) maximal în raport cu această proprietate.
+</p>
+<img src="../media/Graf-hamiltonian.png" style="width:15%; margin-right:30px; height: auto;  display:block; float: left;">
+<p>
+    Graful din figura alăturată este conex, dar nu este tare conex,deoarece nu există drumuri de la nodul 4 la celelalte noduri ale grafului.
+    Graful are două componente tare conexe şi anume subgrafurile generate de mulţimile de noduri {1,2,3} şi {4}.        
+</p>
+<p>
+    <span>Observaţie</span>:  Ţinând cont de definiţia grafului tare conex, deducem că matricea drumurilor asociată unui astfel de graf are toate elementele egale cu 1.
+</p>
+</div>
+
 
 </body>
 </html>
