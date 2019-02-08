@@ -37,11 +37,251 @@
         <li><a href="grafuri_orientate.html#c" class="navlink"><strong>Conexitate şi tare conexitate</strong></a></li>
     </ul>
     </li>
-    <li><a href="#" class="navlink"><strong>Arbori</strong></a></li>
+    <li><a href="#" class="navlink"><strong>Arbori</strong></a>
+    <ul>
+        <li><a href="#a" class="navlink"><strong>Noţiunea de arbore</strong></a></li>
+        <li><a href="#b" class="navlink"><strong>Arbore parţial de cost minim</strong></a></li>
+        <li><a href='#c' class="navlink"><strong>Arbori binari</strong></a></li>
+        <li><a href="#d" class="navlink"><strong>Reprezentarea arborilor binari</strong></a></li>
+    </ul>
+    </li>
 </ul>
 </header>
     
-<img src="../media/Untitled1.png">
+<div>
+    <span class="anchor" id="a"></span>
+    <h2>Noţiunea de arbore</h2>
+
+    <p>
+        În clasa grafurilor conexe, arborii reprezintă grafurile cele mai simple (ca structură) şi, deasemenea, cele mai frecvent utilizate în practică. De studiul lor s-au ocupat matematicieni şi fizicieni de seamă. Termenul de arbore a fost introdus de Cayley în 1857, plecând de la o analogie botanică. 
+    </p>
+    <img src="../media/arbore_1.png" style="float:left; width:15%; margin-right: 20px; margin-bottom: 20px;">
+    <p>
+        <span>Definiţie</span>: Se numeşte <span>arbore</span> un graf neorientat, conex şi fără cicluri.
+    </p>
+    <p>
+        În figura alăturată este desenat un arbore. Se observă că oricum am elimina o muchie, graful îşi pierde proprietatea de conexitate, şi oriunde am adăuga o muchie, apare un ciclu. Acest lucru este valabil în orice arbore.
+    </p>
+    <div class="col" style=" clear: both;">
+    <p style="white-space: pre-line;"><span>Teoremă</span>: Fie un graf neorientat G=(X,U). Următoarele afirmaţii sunt echivalente:
+1)	G este un arbore
+2)	G este un graf conex, minimal cu această proprietate (eliminând o muchie oarecare se obţine un graf neconex)
+3)	G este un graf fără cicluri, maximal cu această proprietate (dacă se adaugă o muchie se obţine un graf care are măcar un ciclu)
+    </p>
+    <p>  
+    <span>Definiţie</span>: Fie graful G=(X,U) cu <span>n&ge;2</span> noduri, <span>m</span> muchii şi <span>p</span> componente conexe. Numărul <span>&nu;(G)=m-n+p</span> se numeşte <span>numărul ciclomatic</span> al grafului G.
+    </p>
+    <p style="white-space:pre-line;"><span>Observaţii</span>:
+        -	se poate arăta că <span>&nu;(G)</span> furnizează numărul de cicluri care se pot alcătui într-un graf
+        -	numărul <span>&nu;(G)</span> reprezintă numărul de muchii ce trebuie înlăturate din graf astfel încât acesta să nu conţină cicluri
+    </p>
+    <p>
+        Definiţie:   Fie G un graf neorientat. Un graf parţial H al lui G, cu proprietatea că H este arbore, se numeşte <span>arbore parţial</span> al lui G. 
+    </p>
+    <p>
+        <span>Corolar</span>: Un graf neorientat G conţine un arbore parţial dacă şi numai dacă G este conex.
+    </p>
+    </div>
+    <div class="col">
+        <p style="white-space:pre-line">Propoziţii:
+                1)	Un arbore cu <span>n&ge;2</span> vârfuri conţine cel puţin două vârfuri terminale.
+                2)	Orice arbore cu <span>n</span> vârfuri are <span>n-1</span> muchii.
+                3)	Un graf G cu <span>n vârfuri</span> şi <span>m muchii</span> este arbore dacă este <span>aciclic</span> şi <span>m=n-1</span>.
+                4)	Un graf G cu <span>n vârfuri</span> şi <span>m muchii</span> este arbore dacă este <span>conex</span> şi <span>m=n-1</span>.
+                5)	Un graf cu <span>n</span> vârfuri şi cel puţin <span>n</span> muchii conţine cel puţin un ciclu.
+                6)	Numerele <span>d<sub>1</sub>&ge;d<sub>2</sub>&ge;d<sub>3</sub>&ge;...&ge;d<sub>n</sub>&ge;1</span> sunt gradele nodurilor unui arbore cu <span>n&ge;2</span> noduri dacă şi numai dacă <span>d<sub>1</sub>+d<sub>2</sub>+...+d<sub>n</sub>=2(n-1)</span>.
+                
+    </p>
+    <p>
+        Definiţie:   Un graf neorientat care nu conţine cicluri se numeşte pădure.
+    </p>
+    <p>
+        Denumirea se justifică prin faptul că fiecare componentă conexă a unui graf pădure este un arbor
+    </p>
+    <img src="../media/arbore_2.png" style="margin:auto; width:80%; height: 200px; display: block;">
+    </div>
+</div>
+
+<div style="clear:both">
+    <span class="anchor" id="b"></span>
+    <h2>Arbore parţial de cost minim</h2>
+    <div class="col">
+    <p>
+        În practică se întâlnesc foarte des probleme de tipul următor: se doreşte conectarea unor consumatori la o sursă de energie electrică astfel încât costul branşării să fie minim. Transpunând problema în termenii teoriei grafurilor, se cere de fapt determinarea unui arbore parţial de cost minim, adică un arbore care are proprietatea că suma costurilor muchiilor sale să fie minimă.
+    </p>
+    <p>
+            <span>Definiţie</span>: Suma costurilor muchiilor unui graf se numeşte <span>costul</span> grafului. Dacă se defineşte funcţia <span>c:U&rarr;R<sub>+</sub></span> care asociază fiecărei muchii un număr real numit <span>cost</span>, costul grafului este:
+    </p>
+    <p style="text-align:center;">
+    <span>
+        c(G)=&sum;<sub style="position:relative; top:15px; margin-left:-25px; ">u&isin;U</sub>c(u) 
+    </span>
+    </p>
+    <p>
+        Funcţia c se numeşte <span>funcţia cost</span>.
+    </p>
+    </div>
+    <div class="col">
+    <p>
+        Fie G=(X,U) un graf conex, reprezentat prin matricea costurilor. Se ştie că prin eliminarea uneia sau a mai multor muchii se obţine un graf parţial. Dacă graful parţial al unui graf G conex este arbore, acesta se numeşte arbore parţial al lui G. Dacă dintr-un graf conex G=(X,U) se elimină muchii astfel încât să se obţină un arbore parţial al cărui cost să fie minim, acesta se numeşte arbore parţial de cost minim.
+    </p>
+    <p>
+        <span>Proprietate</span>: Pentru graful G conex, cu funcţia de cost c, există un graf parţial H conex şi de cost minim, care este şi arbore.  
+    </p>
+    <p>
+        Pentru un arbore parţial de cost minim folosim notaţia prescurtată de <span>APM</span>. Pentru determinarea <span>APM</span> sunt cunoscuţi mai mulţi algoritmi, cei mai utilizaţi fiind algoritmul lui <span>Kruskal</span> (1956) şi algoritmul lui <span>Prim</span>, ambii bazaţi pe o strategie Greedy.
+    </p>
+    </div>
+</div>
+
+<div style="clear:both">
+    <span class="anchor" id="c"></span>
+    <h2>Arbori binari</h2>
+
+    <p>
+        Structurile arborescente reprezintă structuri neliniare de date cu multe aplicaţii în programarea şi utilizarea calculatoarelor.
+    </p>
+    <div class="col">
+    <p>
+        <span>Definiţie</span>: Se numeşte arborescenţă un arbore care are un vârf special numit <span>rădăcină</span> iar celelalte noduri pot fi repartizate în <span>m</span> mulţimi disjuncte <span>X<sub>1</sub>, X<sub>2</sub>,...,X<sub>m</sub></span>, <span>m&ge;0</span>, astfel încât în fiecare din aceste mulţimi există un nod adiacent cu rădăcina, iar subgrafurile generate de acestea sunt la rândul lor arborescenţe.
+    </p>
+    <p>
+        În particular, o arborescenţă cu un singur nod este formată doar din nodul rădăcină. Dacă ordinea relativă a arborescenţelor generate de mulţimile <span>X<sub>1</sub>,X<sub>2</sub>,...,X<sub>m</sub></span> din definţie are importanţă, arborescenţa se numeşte arbore ordonat.
+    </p>
+    <img src="../media/Graf-hamiltonian.png" style="float:left; width:35%; height:250px; padding-right:20px;">
+    <p>
+        În reprezentarea grafică a unei arborescenţe nodurile se desenează pe nivele, astfel: rădăcina se află pe primul nivel, vârfurile adiacente cu rădăcina pe următorul nivel, etc.
+    </p>
+    <p>
+        Nodurile adiacente cu rădăcina se numesc <span>descendenţii rădăcinii</span>. Conceptul se aplică analog pentru nodurile de pe un alt nivel. Descendenţii aceluiaşi nod se numesc <span>fraţi</span>. Dacă nodul <span>x</span> este descendentul unui nod y, îl numim pe acesta din urmă <span>părintele</span> nodului x.
+    </p>
+    </div>
+    <div class="col">
+    <p>
+        <span>Definiţie</span>:  Un <span>arbore binar</span> este o mulţime finită de noduri care este fie vidă, fie reprezintă un arbore ordonat în care fiecare nod are cel mult doi descendenţi.
+    </p>
+    <p>
+        Un arbore binar conţine cel mult doi subarbori, pe care îi numim <span>subarbore stâng</span>, <span>respectiv subarbore drept</span>. Ei se pot obţine prin suprimarea rădăcinii şi a nodurilor incidente cu aceasta. Un nod fără descendenţi se numeşte <span>nod terminal</span> sau <span>frunză</span>.
+    </p>
+    <p>
+        Un arbore binar în care fiecare nod are 0 sau 2 descendenţi se numeşte <span>arbore binar complet</span>. În exemplele de mai sus, arborele din dreapta este un arbore binar complet.
+    </p>
+    <p>
+        Propoziţie:   Un arbore binar complet care are n noduri terminale, toate situate pe acelaşi nivel, are în total <span>2n-1</span> noduri. În consecinţă, un arbore binar complet are un număr impar de noduri.
+    </p>
+    <!-- arbore binar complet-->
+    <img src="../media/Graf-hamiltonian.png" style="display:block; width:70%; margin:auto; height: 200px;">
+    </div>
+</div>
+
+<div style="clear: both">
+    <span class="anchor" id="d"></span>
+    <h2>Reprezentarea arborilor binari</h2>
+
+    <p>
+            Există mai multe posibilităţi de reprezentare a arborilor binari. În continuare sunt descrise trei metode des utilizate
+    </p>
+
+    <h3>Reprezentarea standard</h3>
+    <p>
+            Reprezentarea standard se bazează pe următorul principiu: pentru fiecare nod în parte se precizează, dacă există, descendentul stâng şi descendentul drept. Dacă un nod este terminal, atunci acest lucru se precizează punând 0 în locul descendenţilor săi. Pentru aceast se utilizează fie doi vectori numiţi, de exemplu, S-pentru descendenţii din stânga şi D-pentru descendenţii din dreapa, fie alocarea dinamică. Dacă pentru reprezentarea unui arbore binar cu n noduri se folosesc vectorii S şi D, atunci pentru fiecare nod <span>i&isin;{1,2,....n}</span> componenta S[i] conţine descendentul stâng al nodului i, iar componenta D[i] conţine descendentul drept al nodului i.
+    </p>
+    <img src="../media/Graf-hamiltonian.png" style="width:20%; height:300px; float:left; padding-right:20px;">
+    <p>
+        De exemplu, pentru arborele din figura alăturată, cei doi vectori vor avea următoarea structură:
+    </p>
+
+    <table>
+        <tr>
+            <td>Nodul i</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>S[i]</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+            <td>6</td>
+            <td>0</td>
+            <td>8</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>D[i]</td>
+            <td>3</td>
+            <td>5</td>
+            <td>0</td>
+            <td>0</td>
+            <td>7</td>
+            <td>0</td>
+            <td>9</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <p>
+            Se observă că nu este important să se precizeze rădăcina, deoarece ea nu este descendenta nici unui nod.
+    </p>
+    <h3 style="clear:both">Vectorul de taţi</h3>
+    <p>
+        Se folosesc doi vectori: <span>TATA</span> şi <span>DESC</span>. Pentru fiecare nod <span>i</span>, <span>TATA[i]</span> precezează care nod îi este ascendent (nodul părinte). <span>DESC[i]</span> poate lua două valori: -1 dacă i este descendent stâng pentru TATA[i] şi 1 dacă este descendent drept pentru acesta. Pentru nodul rădăcină, care nu are un nod părinte asociat, valoarea corespunzătoare în cei doi vectori este 0. 
+    </p>
+    <p>
+        Pentru arborele binar de mai sus, configuraţia celor doi vectori este:
+    </p>
+    <table>
+            <tr>
+                <td>Nodul i</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>TATA[i]</td>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+                <td>2</td>
+                <td>5</td>
+                <td>5</td>
+                <td>7</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>DESC[i]</td>
+                <td>0</td>
+                <td>-1</td>
+                <td>1</td>
+                <td>-1</td>
+                <td>1</td>
+                <td>-1</td>
+                <td>1</td>
+                <td>-1</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+</div>
+
+
 
 </body>
 </html>
