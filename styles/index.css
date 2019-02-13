@@ -11,18 +11,7 @@ header
     color: rgb(128, 233, 210);
     font-size: 35px;
 }
-div
-{   text-align: center;
-	margin: 60px 0px;
-	margin-right: auto;
-	margin-left: auto; 
-	background-color: rgb(128, 233, 210);
-	width: 10%;
-	height: 20px;
-	border-radius: 25px;
-    padding: 20px;
-}
-div:hover
+a:hover
 {
     background-color: rgb(0, 153, 120);
     color: black;
@@ -32,7 +21,17 @@ div:hover
 a
 {
 	text-decoration: none;
-	color: black;
+    color: black;
+    display: block;
+    text-align: center;
+	margin: 60px 0px;
+	margin-right: auto;
+	margin-left: auto; 
+	background-color: rgb(128, 233, 210);
+	width: 10%;
+	height: 20px;
+	border-radius: 25px;
+    padding: 20px;
 }
 footer p
 {

@@ -25,6 +25,7 @@ li
     margin-left: 20px;
     float: left;  
     list-style-type: none;
+    margin-top: 5px;
 }
 ul li ul
 {
@@ -53,7 +54,7 @@ ul li:hover ul
     text-decoration: none;
     transition: linear 0.3s;
     display: inline-block;
-    width: 150px;
+    width: 10em;
     text-align: center;
 }
 .navlink:hover
@@ -94,12 +95,13 @@ sup, sub
 }
 h1
 {
+    display: block;
     color: rgb(128, 233, 210);
     float: left;
-    margin-left: 50px;
-    margin-right:50px;
-    vertical-align: middle;
+    margin-left: 20px;
+    margin-right:0px;
     font-size: 37px;
+
 }
 h2
 {
