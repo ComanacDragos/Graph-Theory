@@ -1,0 +1,22 @@
+.graf
+{   
+    height: 200px;
+    width: 19%;
+
+}
+.row
+{
+    float: left;
+    margin: 10px 0px; 
+}
+.row p
+{
+    text-align: center;
+}
+.col_img  
+{  
+    float:left;
+    width: 350px;
+    height: 300px;
+    margin-right:20px;
+}
