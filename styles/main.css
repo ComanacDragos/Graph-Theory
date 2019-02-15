@@ -54,7 +54,7 @@ ul li:hover ul
     text-decoration: none;
     transition: linear 0.3s;
     display: inline-block;
-    width: 10em;
+    width: 9em;
     text-align: center;
 }
 .navlink:hover
