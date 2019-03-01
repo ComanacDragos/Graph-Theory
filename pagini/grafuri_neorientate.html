@@ -374,20 +374,18 @@
     <p>Datorită specificului unor probleme practice, acest mod de memorare a grafului poate căpăta două aspecte, după cum trebuie determinat <span>minimul</span> sau <span>maximul</span> unei anumite mărimi asociate muchiilor (cost, durată, timp, distanţă etc.).
       <br> A) Matricea costurilor, forma 1: este folosită în cazul în care se doreşte determinarea unui drum de <span>lungime minimă</span> între două vârfuri oarecare şi se defineşte astfel:
     </p>
-    
-    <p style="white-space:pre-wrap; margin: auto;width: 50%;"> <span>
+    <p style="white-space:pre-wrap; width: 800px; margin: auto;"> <span>
        a[i][j]= c,  dacă există o muchie de cost c>0 între nodurile i şi j, i&ne;j
                    0,  dacă i=j
                    &infin;,  dacă nu există muchie între vârfurile i şi j, i&ne;j</span>
-    </p>
-
+    </p>s
     <p>
             Este evidentă necesitatea ataşării unei valori cât mai mari unei muchii ce de fapt nu există, deoarece, căutându-se un drum de <span>lungime minimă</span>, în acest mod se evită selectarea, la un moment dat, a respectivei muchii. În practică, în scrierea unui program se alege cea mai mare valoare ce se poate reprezenta în calculator.
     </p>
     <p>
             B) Matricea costurilor, forma 2: este folosită în cazul când se doreşte determinarea unui drum de <span>lungime maximă</span> între două noduri şi se defineşte astfel:
     </p>
-    <p style="white-space:pre-wrap; margin: auto;width: 50%;"> <span>
+    <p style="white-space:pre-wrap; margin: auto; width: 800px;"> <span>
             a[i][j]= c,  dacă există o muchie de cost c>0 între nodurile i şi j, i&ne;j
                         0,  dacă i=j
                         -&infin;,  dacă nu există muchie între vârfurile i şi j, i&ne;j</span>

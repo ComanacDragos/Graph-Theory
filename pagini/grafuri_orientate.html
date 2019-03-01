@@ -174,7 +174,7 @@
 <p>
      Pentru exemplificarea metodelor de reprezentare specifice grafurilor orientate vom considera în cele ce urmează următorul graf: <span>G=(X,U), n=4, m=5, X={1,2,3,4}, U={u<sub>1</sub>,u<sub>2</sub>,u<sub>3</sub>,u<sub>4</sub>,u<sub>5</sub>}</span>.
 </p>
-<img src="../media/graf-partial2.png" style="height: 250px;width: 30%; margin: auto; display: block;">
+<img src="../media/graf_orientat_6.png" style="height: 250px;width: 30%; margin: auto; display: block;">
 
 <h3>Matricea de adiacenţă</h3>
 
@@ -231,7 +231,7 @@
 
 <p>Matricea <span>vârfuri-arce</span> sau matricea de incidenţă a grafului G=(X,U) cu <span>n vârfuri</span> şi <span>m arce</span> este o matrice <span>B=(b<sub>ij</sub>)<sub>nxm</sub></span> unde:</p>
 
-<p style="white-space:pre-wrap; margin: auto;width: 50%;"><span>b<sub>ij</sub>= 1  dacă xi este extremitatea iniţială a arcului u<sub>j</sub>
+<p style="white-space:pre-wrap;margin: auto; width: 90%;"><span>b<sub>ij</sub>= 1  dacă xi este extremitatea iniţială a arcului u<sub>j</sub>
       -1 dacă xi este extremitatea finală a arcului u<sub>j</sub>  		 
        0  dacă xi nu este incident cu arcul u<sub>j</sub></span>
     </p>
@@ -373,7 +373,7 @@
 <p>
     Se numeşte matrice a drumurilor asociată grafului orientat G=(X,U), matricea <span>D=(d<sub>ij</sub>)<sub>nxn</sub></span> dată prin:
 </p>
-<p style="white-space:pre-wrap; margin: auto;width: 80%;"><span>d<sub>ij</sub>= 1 dacă există drum în graful G de la nodul i la nodul j
+<p style="white-space:pre-wrap; margin: auto;width: 90%;"><span>d<sub>ij</sub>= 1 dacă există drum în graful G de la nodul i la nodul j
        0 în caz contrar
 </span>
 </p>
@@ -412,7 +412,7 @@ Se observă că matricea drumurilor are practic aceeaşi semnificaţie ca matric
     Se numeşte <span>componentă conexă</span> a unui graf orientat G un subgraf conex al său maximal în raport cu acestă proprietate (oricare ar fi un vârf din subgraf nu există lanţ între acel vârf şi vârfurile care nu fac parte din subgraf).
 </p>
 <p><span>Exemplu</span>:</p>
-<img src="../media/Graf-hamiltonian.png" style="width:50%; margin:auto; height: 300px; display: block;">
+<img src="../media/graf_orientat_7.png" style="width:50%; margin:auto; height: 300px; display: block;">
 
 <p>
     În figura de mai sus, graful G=(X,U) cu X={1,2,3,4} şi U={(1,2), (1,3), (3,2), (3,4)} este conex. El are o singură componentă conexă (graful însuşi). Graful G’=(X’,U’) cu X’={1,2,3,4,5,6} şi U’={(1,2), (2,3), (4,5), (6,5)} nu este conex, dar are două componete conexe şi anume subgrafurile generate de mulţimile de vârfuri X1={1,2,3} şi respectiv X2={4,5,6}.   
@@ -421,7 +421,7 @@ Se observă că matricea drumurilor are practic aceeaşi semnificaţie ca matric
     <span>Definiţie</span>:  Dacă G este un graf orientat, numim <span>graf suport</span> al lui G, graful neorientat obţinut prin înlocuirea fiecărui arc din G cu muchia corespunzătoare urmată de eliminarea muchiilor multiple.
 </p>
 <p><span>Exemplu</span>:</p>
-<img src="../media/Graf-hamiltonian.png" style="width:50%; margin:auto; height: 300px; display: block;">
+<img src="../media/graf_orientat_8.png" style="width:50%; margin:auto; height: 300px; display: block;">
 
 <p>
     În desenul anterior este prezentat un graf orientat şi graful său suport, obţinut prin înlocuirea fiecărui arc cu muchia corespunzăroare, urmată de eliminarea muchiilor multiple.
@@ -438,7 +438,7 @@ Se observă că matricea drumurilor are practic aceeaşi semnificaţie ca matric
 <p>
     <span>Definiţie</span>: Se numeşte componentă tare conexă a unui graf orientat G=(X,U) un subgraf tare conex al său H=(Y,V) maximal în raport cu această proprietate.
 </p>
-<img src="../media/Graf-hamiltonian.png" style="width:15%; margin-right:30px; height: auto;  display:block; float: left;">
+<img src="../media/graf_orientat_9.png" style="width:15%; margin-right:30px; height: auto;  display:block; float: left;">
 <p>
     Graful din figura alăturată este conex, dar nu este tare conex,deoarece nu există drumuri de la nodul 4 la celelalte noduri ale grafului.
     Graful are două componente tare conexe şi anume subgrafurile generate de mulţimile de noduri {1,2,3} şi {4}.        
