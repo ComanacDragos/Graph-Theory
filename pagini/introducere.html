@@ -2,9 +2,23 @@
 <html>
 <head>
     <link href="../styles/main.css" rel="stylesheet" type="text/css">
-    <link href="../styles/introducere.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/ico" href="../media/logo.jpg" /> 
     <title>Teoria Grafurilor</title>
+<style>
+.graf
+{   
+    height: 200px;
+    width: 19%;
+
+}
+.col_img  
+{  
+    float:left;
+    width: 350px;
+    height: 300px;
+    margin-right:20px;
+}
+</style>
 </head>
 <body style="margin-top:130px;">
 <header>
@@ -51,16 +65,16 @@
 </header>
 
 <div>
-<p style="text-align:center; font-style: italic; font-size: 33px;">
+<p style="text-align:center; font-style: italic; font-size: 33px; color:rgb(128, 233, 210);">
    “Azi teoria grafurilor a devenit o disciplină majoră, deşi nu-şi găseşte locul într-o clasificare dogmatică a capitolelor matematicii. 
     Folosirea teoriei grafurilor în domenii variate, de la chimie, la economie, de la studiul reţelelor electrice la critica textelor şi la politică, îi dau azi
      un prestigiu de care cel ce clasifică ştiinţele trebuie să ţină seama”.(Grigore C. Moisil)
 </p>
 <p>
-        In matematică și informatică, teoria grafurilor studiază proprietățile grafurilor.
+        In <span>matematică</span> și <span>informatică</span>, teoria grafurilor studiază proprietățile grafurilor.
         Un graf este o mulțime de obiecte (numite noduri) legate între ele printr-o mulțime de muchii cărora le pot fi atribuite direcții (în acest caz, se spune că graful este orientat).
         Un graf poate fi reprezentat geometric ca o mulțime de puncte legate între ele prin linii (de obicei curbe).
-        Dezvoltarea teoriei grafurilor a pornit de la probleme legate de jocuri și amuzamente matematice menite a testa ingeniozitatea. Acestea au atras atenția unor matematicieni experimentați precum Euler, Hamilton, Cayley, Birkhoff iar cu trecerea anilor teoria grafurilor a
+        Dezvoltarea teoriei grafurilor a pornit de la probleme legate de jocuri și amuzamente matematice menite a testa ingeniozitatea. Acestea au atras atenția unor matematicieni experimentați precum <span>Euler</span>, <span>Hamilton</span>, <span>Cayley</span>, <span>Birkhoff</span> iar cu trecerea anilor teoria grafurilor a
         devenit un domeniu bogat in rezultate și de o surprinzătoare varietate și aplicabilitate.
  </p>
  
@@ -86,7 +100,7 @@ Grafurile au o importanță imensă în informatică, de exemplu:
 
     <div class="titlu_img" style="float:left; margin-right:20px"> 
     <img src="../media/euler.jpg"  style="float:left; height: 300px; width:250px">
-    <p style="text-align: center "><strong>Euler</strong></p>
+    <p style="text-align: center "><strong><span>Euler</span></strong></p>
     </div>
 
     <p>
@@ -102,7 +116,7 @@ Grafurile au o importanță imensă în informatică, de exemplu:
 
     <div class="titlu_img" style="float:right; margin-left:20px;">
     <img src="../media/Sylvester.png" class="titlu_img" style="float:right; height: 300px; width:250px;">
-    <p style="text-align: center "><strong>Sylvester</strong></p>
+    <p style="text-align: center "><strong><span>Sylvester</span></strong></p>
     </div>
 
     <p>
@@ -138,7 +152,7 @@ Grafurile au o importanță imensă în informatică, de exemplu:
     <h2>Problema podurilor din Königsberg</h2>
 
     <p> 
-        Problema celor șapte poduri din Königsberg este o problemă de matematică de importanță istorică. Leonhard Euler a arătat în 1736 că nu are soluție, 
+        <span>Problema celor șapte poduri din Königsberg</span> este o problemă de matematică de importanță istorică. Leonhard Euler a arătat în 1736 că nu are soluție, 
         punând bazele teoriei grafurilor și prefigurând ideea de topologie.
         Orașul Königsberg din Prusia (astăzi, Kaliningrad, Rusia) se întindea pe ambele mauri ale râului Pregel⁠,
         cuprinzând și două insule mari legate una de cealaltă, și cu diverse alte porțiune ale orașului prin șapte poduri. 
@@ -147,16 +161,17 @@ Grafurile au o importanță imensă în informatică, de exemplu:
 
     <div class="titlu_img" style="float:right; margin-left:20px; height: 460px;">
         <img src="../media/Konigsberg_bridges.png" class="titlu_img" style="float:right; height: 300px; width:250px;">
-        <p style="text-align: center; font-size:20px;">Hartă a Königsbergului pe vremea lui Euler cu dispunerea efectivă a celor șapte poduri, figurând și râul Pregel și podurile</p>
+        <p style="text-align: center; color: rgb(128, 233, 210); font-size:20px; ">Hartă a Königsbergului pe vremea lui Euler cu dispunerea efectivă a celor șapte poduri, figurând și râul Pregel și podurile</p>
      </div>
 
-    <p>
+    <p style="white-space:pre-line;">
         Pentru a enunța fără echivoc cerința logică a problemei, soluțiile care implică fie:
-        <br>1.ajungerea pe o insulă sau într-o parte de oraș altfel decât trecând podurile, sau
-        <br>2.accesarea oricărui pod fără a-l traversa până la celălalt capăt 
-        <br>sunt în mod explicit inacceptabile.
-        <br>
-        <br>Euler a demonstrat că problema nu are soluție. Dificultatea cu care s-a confruntat a fost să dezvolte de o tehnică adecvată de analiză, și teste ulterioare, care să enunțe această afirmație cu rigoare matematică.
+        
+        1.ajungerea pe o insulă sau într-o parte de oraș altfel decât trecând podurile, sau
+        2.accesarea oricărui pod fără a-l traversa până la celălalt capăt 
+        sunt în mod explicit inacceptabile.
+
+        Euler a demonstrat că problema nu are soluție. Dificultatea cu care s-a confruntat a fost să dezvolte de o tehnică adecvată de analiză, și teste ulterioare, care să enunțe această afirmație cu rigoare matematică.
     </p>
    
     <p>
@@ -169,7 +184,7 @@ Grafurile au o importanță imensă în informatică, de exemplu:
     <img src="../media/cele 7 poduri.png" style="display: block; margin-left: auto; margin-right: auto;height: 300px; width: 80%;">
     <div class="titlu_img" style="float:left; margin-right:20px; height: 470px"> 
         <img src="../media/present state.png"  style="float:left; height: 300px; width:250px; margin-top:20px;">
-        <p style="text-align: center; font-size:20px">Hartă modernă a Kaliningradului. Locațiile celorlalte poduri sunt evidențiate cu verde, în timp ce cele distruse sunt evidențiate în roșu.</p>
+        <p style="text-align: center; font-size:20px; color: rgb(128, 233, 210);">Hartă modernă a Kaliningradului. Locațiile celorlalte poduri sunt evidențiate cu verde, în timp ce cele distruse sunt evidențiate în roșu.</p>
     </div>
     <p>
             În limbaj modern, Euler a arătat că posibilitatea de parcurgere a unui graf, prin traversarea fiecărei muchii exact o dată, depinde de gradele nodurilor. Gradul unui nod este numărul de muchii care îl ating.
@@ -198,15 +213,12 @@ Grafurile au o importanță imensă în informatică, de exemplu:
     <h2 >Grafuri în viața reala</h2>
 
 <div>
-    <div class="row">
-
         <p>Cel mai bun exemplu de aplicație practică în viață reală a grafurilor neorientate sunt hărțile rutiere. Putem afla astfel cel mai scurt drum până într-un anumit punct sau care puncte de pe hartă sunt cel mai ușor accesibile. </p>
         <P>Nodurile  pot fi considerate orașe, iar muchiile drumuri; grafurile orientate pot reprezenta drumuri cu sens unic între clădiri.  De asemenea, ne putem reprezenta traiectoria unei călătorii cu ajutorul unui lanț al unui graf neorientat. 
         Teoria grafurilor are numeroase apeluri în chimie, contribuind în mare măsură la rezolvarea problemelor de numărare a grafurilor aparținând unor clase speciale. Teoria grafurilor este folosită în domenii variate: de la chimie la economie, de la studiul rețelelor electrice la critică textelor de politică, devenind o disciplină majoră.</p>
         <p>Grafurile mai pot arăta legăturile dintre anuminte grupuri sau oameni; grafuri orientate pot arăta transferul de informații sau a unor bunuri.Un arbore genealogic este de asemena un graf neorientat.</p>
         <p>Cablurile de înaltă tensiune care pornesc dintr-o centrală pot fi și ele reprezentate cu ușurință cu ajutorul unui graf orientat, indicând și direcția de deplasare a curentului. În acest caz centrala este un nod sursă. La fel se poate reprezenta și un sistem de canalizare, de încălzire sau rețeaua de apă curentă.        </p>
         <P> Multitudinea căilor aeriene reprezintă grafuri. Nodurile sunt intersecțiile (imaginare) și muchiile sunt rutele (imaginare). Noduri pot fi și aeroporturile.</P>
-    </div>
 </div>
 </body>
 </html
